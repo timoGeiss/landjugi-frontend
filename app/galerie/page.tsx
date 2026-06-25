@@ -23,15 +23,15 @@ export default async function GaleriePage() {
           {albums.map(album => (
             <Link key={album.id} href={`/galerie/${album.id}`}
               className="group rounded-xl overflow-hidden border border-border bg-card hover:shadow-md transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+              <div className="overflow-hidden bg-gray-100">
                 {album.cover_url ? (
                   <AlbumCover
                     src={album.cover_url}
                     alt={album.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-green-50 to-gray-100">
+                  <div className="aspect-[4/3] flex items-center justify-center bg-gradient-to-br from-green-50 to-gray-100">
                     <Camera className="h-12 w-12 text-primary opacity-20" />
                   </div>
                 )}

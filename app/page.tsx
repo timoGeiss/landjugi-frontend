@@ -68,7 +68,7 @@ export default async function HomePage() {
       </section>
 
       {/* Upcoming Events */}
-      <section className="container py-16">
+      <section className="container py-20">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-2xl font-bold">Nächste Anlässe</h2>
@@ -118,7 +118,7 @@ export default async function HomePage() {
 
       {/* About teaser */}
       <section className="bg-[--secondary] border-y border-[--border]">
-        <div className="container py-16">
+        <div className="container py-20">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl font-bold mb-4">{get('about_title') || 'Über uns'}</h2>
             <p className="text-[--muted-foreground] leading-relaxed mb-6">
@@ -137,7 +137,7 @@ export default async function HomePage() {
       </section>
 
       {/* Gallery teaser */}
-      <section className="container py-16">
+      <section className="container py-20">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-2xl font-bold">Galerie</h2>
@@ -158,7 +158,7 @@ export default async function HomePage() {
 
       {/* CTA */}
       <section className="bg-[--primary] text-white">
-        <div className="container py-14 text-center">
+        <div className="container py-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Werde Teil der Landjugend!</h2>
           <p className="text-white/80 mb-6 max-w-md mx-auto">
             Lerne neue Leute kennen, erlebe gemeinsame Abenteuer und sei dabei!

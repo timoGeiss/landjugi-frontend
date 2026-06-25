@@ -25,7 +25,7 @@ export function AlbumForm({ events, album }: Props) {
     description: album?.description ?? '',
     event_id: album?.event_id ?? '',
     cover_url: album?.cover_url ?? '',
-    is_published: album?.is_published ?? false,
+    is_published: album?.is_published ?? true,
   })
   const [photos, setPhotos] = useState<File[]>([])
   const coverInputRef = useRef<HTMLInputElement>(null)

@@ -88,25 +88,40 @@ export function Header() {
 
           <div className="flex items-center gap-2">
             {user ? (
-              <div className="hidden lg:flex items-center gap-2">
-                <Link href="/portal" className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-[--secondary]">
+              <div className="flex items-center gap-1">
+                <Link
+                  href="/portal"
+                  className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-[--secondary]"
+                  title="Mein Bereich"
+                >
                   <User className="h-4 w-4" />
-                  {profile?.full_name?.split(' ')[0] ?? 'Profil'}
+                  <span className="hidden lg:inline">{profile?.full_name?.split(' ')[0] ?? 'Profil'}</span>
                 </Link>
                 {isAdmin && (
-                  <Link href="/admin" className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-[--secondary]">
+                  <Link
+                    href="/admin"
+                    className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-[--secondary]"
+                    title="Admin"
+                  >
                     <Settings className="h-4 w-4" />
-                    Admin
+                    <span className="hidden lg:inline">Admin</span>
                   </Link>
                 )}
-                <button onClick={handleSignOut} className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-[--secondary]">
+                <button
+                  onClick={handleSignOut}
+                  className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-[--secondary]"
+                  title="Abmelden"
+                >
                   <LogOut className="h-4 w-4" />
                 </button>
               </div>
             ) : (
-              <Link href="/login" className="hidden lg:flex items-center gap-1.5 text-sm px-3 py-2 rounded-md bg-[--primary] text-white hover:bg-[--primary]/90">
+              <Link
+                href="/login"
+                className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md bg-[--primary] text-white hover:bg-[--primary]/90"
+              >
                 <LogIn className="h-4 w-4" />
-                Anmelden
+                <span className="hidden sm:inline">Anmelden</span>
               </Link>
             )}
 

@@ -40,10 +40,10 @@ export default function KontaktPage() {
   }
 
   return (
-    <div className="container py-12">
-      <div className="mb-8">
+    <div className="container py-16">
+      <div className="mb-12">
         <h1 className="text-3xl font-bold mb-2">Kontakt</h1>
-        <div className="h-1 w-16 bg-[--primary] rounded" />
+        <div className="h-1 w-16 bg-primary rounded" />
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 max-w-4xl">
@@ -53,7 +53,7 @@ export default function KontaktPage() {
             <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
               <CheckCircle className="h-12 w-12 text-green-500" />
               <p className="font-medium">Deine Nachricht wurde gesendet!</p>
-              <p className="text-sm text-[--muted-foreground]">Wir melden uns so schnell wie möglich bei dir.</p>
+              <p className="text-sm text-muted-foreground">Wir melden uns so schnell wie möglich bei dir.</p>
               <Button variant="outline" onClick={() => { setSent(false); setForm({ name: '', email: '', subject: '', body: '' }) }}>
                 Weitere Nachricht senden
               </Button>
@@ -91,30 +91,30 @@ export default function KontaktPage() {
             <h2 className="text-lg font-semibold mb-4">Kontaktdaten</h2>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-[--primary] mt-0.5" />
+                <Mail className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <div className="text-sm font-medium">E-Mail</div>
-                  <a href="mailto:info@landjugend-untere-emme.ch" className="text-[--muted-foreground] text-sm hover:text-[--primary]">
+                  <a href="mailto:info@landjugend-untere-emme.ch" className="text-muted-foreground text-sm hover:text-primary">
                     info@landjugend-untere-emme.ch
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-[--primary] mt-0.5" />
+                <MapPin className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <div className="text-sm font-medium">Adresse</div>
-                  <p className="text-[--muted-foreground] text-sm">Landjugend Untere Emme<br />3400 Burgdorf</p>
+                  <p className="text-muted-foreground text-sm">Landjugend Untere Emme<br />3400 Burgdorf</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-[--accent] rounded-xl p-6">
+          <div className="bg-accent rounded-xl p-6">
             <h3 className="font-semibold mb-2">Mitglied werden?</h3>
-            <p className="text-sm text-[--muted-foreground] mb-3">
+            <p className="text-sm text-muted-foreground mb-3">
               Du möchtest der Landjugend beitreten? Fülle unser Beitrittsformular aus!
             </p>
-            <a href="/beitreten" className="text-sm text-[--primary] font-medium hover:underline">
+            <a href="/beitreten" className="text-sm text-primary font-medium hover:underline">
               Beitrittsanfrage stellen →
             </a>
           </div>

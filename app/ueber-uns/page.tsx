@@ -9,15 +9,15 @@ export default async function UeberUnsPage() {
   const get = (key: string) => content?.find(c => c.key === key)?.value ?? ''
 
   return (
-    <div className="container py-12">
+    <div className="container py-16">
       <div className="max-w-3xl mx-auto">
-        <div className="mb-8">
+        <div className="mb-12">
           <h1 className="text-3xl font-bold mb-2">{get('about_title') || 'Über uns'}</h1>
-          <div className="h-1 w-16 bg-[--primary] rounded" />
+          <div className="h-1 w-16 bg-primary rounded" />
         </div>
 
         <div className="prose prose-sm max-w-none mb-12">
-          <p className="text-lg text-[--muted-foreground] leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             {get('about_text')}
           </p>
         </div>
@@ -29,21 +29,21 @@ export default async function UeberUnsPage() {
             { icon: Heart, title: 'Engagement', text: 'Wir engagieren uns für unsere Region und tragen zur lebendigen Dorfgemeinschaft bei.' },
             { icon: Mountain, title: 'Abenteuer', text: 'Gemeinsame Ausflüge, Lager und besondere Erlebnisse – bei uns ist immer etwas los!' },
           ].map(({ icon: Icon, title, text }) => (
-            <div key={title} className="flex gap-4 p-5 rounded-xl border border-[--border] bg-[--card]">
-              <div className="flex-shrink-0 h-10 w-10 rounded-lg bg-[--accent] flex items-center justify-center">
-                <Icon className="h-5 w-5 text-[--primary]" />
+            <div key={title} className="flex gap-4 p-5 rounded-xl border border-border bg-card">
+              <div className="flex-shrink-0 h-10 w-10 rounded-lg bg-accent flex items-center justify-center">
+                <Icon className="h-5 w-5 text-primary" />
               </div>
               <div>
                 <h3 className="font-semibold mb-1">{title}</h3>
-                <p className="text-sm text-[--muted-foreground]">{text}</p>
+                <p className="text-sm text-muted-foreground">{text}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="bg-[--accent] rounded-xl p-8 text-center">
+        <div className="bg-accent rounded-xl p-8 text-center">
           <h2 className="text-xl font-bold mb-2">Mitglied werden?</h2>
-          <p className="text-[--muted-foreground] mb-4">
+          <p className="text-muted-foreground mb-4">
             Du bist zwischen 14 und 30 Jahren alt und wohnst in der Region Untere Emme? Wir freuen uns auf dich!
           </p>
           <a href="/beitreten" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[--primary] text-white font-medium hover:bg-[--primary]/90 transition-colors">

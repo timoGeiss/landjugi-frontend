@@ -37,12 +37,12 @@ export default function RegisterPage() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[--accent] mb-4">
-            <Leaf className="h-6 w-6 text-[--primary]" />
+            <Leaf className="h-6 w-6 text-primary" />
           </div>
           <h1 className="text-2xl font-bold">Registrieren</h1>
-          <p className="text-[--muted-foreground] text-sm mt-1">Erstelle dein Konto</p>
+          <p className="text-muted-foreground text-sm mt-1">Erstelle dein Konto</p>
         </div>
-        <div className="border border-[--border] rounded-xl p-6 bg-[--card]">
+        <div className="border border-border rounded-xl p-6 bg-white">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-1.5">
               <Label htmlFor="name">Name</Label>
@@ -65,11 +65,11 @@ export default function RegisterPage() {
               {loading ? 'Wird erstellt...' : 'Konto erstellen'}
             </Button>
           </form>
-          <div className="mt-4 text-center text-sm text-[--muted-foreground]">
+          <div className="mt-4 text-center text-sm text-muted-foreground">
             Bereits ein Konto?{' '}
-            <Link href="/login" className="text-[--primary] hover:underline font-medium">Anmelden</Link>
+            <Link href="/login" className="text-primary hover:underline font-medium">Anmelden</Link>
           </div>
-          <p className="text-xs text-[--muted-foreground] text-center mt-3">
+          <p className="text-xs text-muted-foreground text-center mt-3">
             Mit der Registrierung stimmst du der{' '}
             <Link href="/datenschutz" className="underline">Datenschutzerklärung</Link> zu.
           </p>

@@ -42,26 +42,26 @@ export default function BeiretenPage() {
   }
 
   return (
-    <div className="container py-12">
+    <div className="container py-16">
       <div className="max-w-lg mx-auto">
-        <div className="mb-8">
+        <div className="mb-12">
           <h1 className="text-3xl font-bold mb-2">Mitglied werden</h1>
-          <div className="h-1 w-16 bg-[--primary] rounded" />
-          <p className="text-[--muted-foreground] mt-3">
+          <div className="h-1 w-16 bg-primary rounded" />
+          <p className="text-muted-foreground mt-3">
             Fülle das Formular aus und wir melden uns bei dir!
           </p>
         </div>
 
         {submitted ? (
-          <div className="text-center py-12 space-y-4 border border-[--border] rounded-xl">
+          <div className="text-center py-12 space-y-4 border border-border rounded-xl">
             <CheckCircle className="h-14 w-14 text-green-500 mx-auto" />
             <h2 className="text-xl font-semibold">Anfrage gesendet!</h2>
-            <p className="text-[--muted-foreground] max-w-sm mx-auto">
+            <p className="text-muted-foreground max-w-sm mx-auto">
               Vielen Dank für dein Interesse! Wir werden deine Anfrage prüfen und uns bald bei dir melden.
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-5 border border-[--border] rounded-xl p-6 bg-[--card]">
+          <form onSubmit={handleSubmit} className="space-y-5 border border-border rounded-xl p-6 bg-card">
             <div className="space-y-1.5">
               <Label htmlFor="full_name">Name *</Label>
               <Input id="full_name" value={form.full_name} onChange={e => setForm(f => ({ ...f, full_name: e.target.value }))} placeholder="Vor- und Nachname" required />
@@ -88,7 +88,7 @@ export default function BeiretenPage() {
               <UserPlus className="h-4 w-4" />
               {loading ? 'Wird gesendet...' : 'Beitrittsanfrage senden'}
             </Button>
-            <p className="text-xs text-[--muted-foreground] text-center">
+            <p className="text-xs text-muted-foreground text-center">
               Mit dem Absenden stimmst du unserer{' '}
               <a href="/datenschutz" className="underline">Datenschutzerklärung</a> zu.
             </p>

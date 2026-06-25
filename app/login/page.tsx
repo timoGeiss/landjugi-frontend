@@ -56,18 +56,18 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[--accent] mb-4">
-            <Leaf className="h-6 w-6 text-[--primary]" />
+            <Leaf className="h-6 w-6 text-primary" />
           </div>
           <h1 className="text-2xl font-bold">Anmelden</h1>
-          <p className="text-[--muted-foreground] text-sm mt-1">Landjugend Untere Emme</p>
+          <p className="text-muted-foreground text-sm mt-1">Landjugend Untere Emme</p>
         </div>
-        <div className="border border-[--border] rounded-xl p-6 bg-[--card]">
+        <div className="border border-border rounded-xl p-6 bg-white">
           <Suspense>
             <LoginForm />
           </Suspense>
-          <div className="mt-4 text-center text-sm text-[--muted-foreground]">
+          <div className="mt-4 text-center text-sm text-muted-foreground">
             Noch kein Konto?{' '}
-            <Link href="/register" className="text-[--primary] hover:underline font-medium">Registrieren</Link>
+            <Link href="/register" className="text-primary hover:underline font-medium">Registrieren</Link>
           </div>
         </div>
       </div>

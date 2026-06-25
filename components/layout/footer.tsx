@@ -3,7 +3,7 @@ import { Leaf, Mail } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="bg-[--primary] text-white mt-auto">
+    <footer className="bg-primary text-white mt-auto">
       <div className="container py-10">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           <div>

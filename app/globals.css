@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+/* ── Tailwind v4 theme tokens ── */
+@theme {
+  --color-primary: #2d6a2d;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f3f4f6;
+  --color-secondary-foreground: #374151;
+  --color-muted: #f9fafb;
+  --color-muted-foreground: #6b7280;
+  --color-accent: #dcfce7;
+  --color-accent-foreground: #166534;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-background: #fafaf8;
+  --color-foreground: #1a1a1a;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+  --color-border: #e5e7eb;
+  --color-ring: #2d6a2d;
+  --color-input: #e5e7eb;
+  --radius: 0.5rem;
+}
+
+/* Keep CSS custom property aliases so existing bg-[--primary] refs still work */
 :root {
   --background: #fafaf8;
   --foreground: #1a1a1a;
@@ -21,6 +44,19 @@
 }
 
 .dark {
+  --color-primary: #4ade80;
+  --color-primary-foreground: #052e16;
+  --color-secondary: #374151;
+  --color-secondary-foreground: #f9fafb;
+  --color-muted: #1f2937;
+  --color-muted-foreground: #9ca3af;
+  --color-accent: #14532d;
+  --color-accent-foreground: #86efac;
+  --color-background: #111827;
+  --color-foreground: #f9fafb;
+  --color-card: #1f2937;
+  --color-card-foreground: #f9fafb;
+  --color-border: #374151;
   --background: #111827;
   --foreground: #f9fafb;
   --card: #1f2937;
@@ -34,8 +70,6 @@
   --muted-foreground: #9ca3af;
   --accent: #14532d;
   --accent-foreground: #86efac;
-  --destructive: #f87171;
-  --destructive-foreground: #ffffff;
 }
 
 * {
@@ -64,4 +98,34 @@ body {
   .container {
     padding: 0 2rem;
   }
+}
+
+/* Section spacing utility */
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Modal backdrop */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 32rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }

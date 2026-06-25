@@ -77,13 +77,27 @@ export function Header() {
                 className={cn(
                   'px-3 py-2 rounded-md text-sm font-medium transition-colors',
                   pathname === link.href
-                    ? 'bg-[--accent] text-[--accent-foreground]'
-                    : 'text-[--foreground] hover:bg-[--secondary]'
+                    ? 'bg-accent text-accent-foreground'
+                    : 'hover:bg-secondary'
                 )}
               >
                 {link.label}
               </Link>
             ))}
+            {isAdmin && (
+              <Link
+                href="/admin"
+                className={cn(
+                  'px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5',
+                  pathname.startsWith('/admin')
+                    ? 'bg-primary text-white'
+                    : 'text-primary hover:bg-accent'
+                )}
+              >
+                <Settings className="h-3.5 w-3.5" />
+                Admin
+              </Link>
+            )}
           </nav>
 
           <div className="flex items-center gap-2">
@@ -91,25 +105,15 @@ export function Header() {
               <div className="flex items-center gap-1">
                 <Link
                   href="/portal"
-                  className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-[--secondary]"
+                  className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-secondary"
                   title="Mein Bereich"
                 >
                   <User className="h-4 w-4" />
                   <span className="hidden lg:inline">{profile?.full_name?.split(' ')[0] ?? 'Profil'}</span>
                 </Link>
-                {isAdmin && (
-                  <Link
-                    href="/admin"
-                    className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-[--secondary]"
-                    title="Admin"
-                  >
-                    <Settings className="h-4 w-4" />
-                    <span className="hidden lg:inline">Admin</span>
-                  </Link>
-                )}
                 <button
                   onClick={handleSignOut}
-                  className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-[--secondary]"
+                  className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md hover:bg-secondary"
                   title="Abmelden"
                 >
                   <LogOut className="h-4 w-4" />
@@ -118,7 +122,7 @@ export function Header() {
             ) : (
               <Link
                 href="/login"
-                className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md bg-[--primary] text-white hover:bg-[--primary]/90"
+                className="flex items-center gap-1.5 text-sm px-3 py-2 rounded-md bg-primary text-white hover:opacity-90"
               >
                 <LogIn className="h-4 w-4" />
                 <span className="hidden sm:inline">Anmelden</span>
@@ -126,7 +130,7 @@ export function Header() {
             )}
 
             <button
-              className="lg:hidden p-2 rounded-md hover:bg-[--secondary]"
+              className="lg:hidden p-2 rounded-md hover:bg-secondary"
               onClick={() => setOpen(!open)}
               aria-label="Navigation öffnen"
             >
@@ -138,7 +142,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden border-t border-[--border] bg-white">
+        <div className="lg:hidden border-t border-border bg-white">
           <nav className="container py-4 flex flex-col gap-1">
             {navLinks.map(link => (
               <Link
@@ -147,29 +151,36 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className={cn(
                   'px-3 py-2.5 rounded-md text-sm font-medium',
-                  pathname === link.href ? 'bg-[--accent] text-[--accent-foreground]' : 'hover:bg-[--secondary]'
+                  pathname === link.href ? 'bg-accent text-accent-foreground' : 'hover:bg-secondary'
                 )}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="border-t border-[--border] mt-2 pt-2">
+            {isAdmin && (
+              <Link
+                href="/admin"
+                onClick={() => setOpen(false)}
+                className={cn(
+                  'flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-md',
+                  pathname.startsWith('/admin') ? 'bg-primary text-white' : 'text-primary hover:bg-accent'
+                )}
+              >
+                <Settings className="h-4 w-4" /> Admin
+              </Link>
+            )}
+            <div className="border-t border-border mt-2 pt-2">
               {user ? (
                 <>
-                  <Link href="/portal" onClick={() => setOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm rounded-md hover:bg-[--secondary]">
+                  <Link href="/portal" onClick={() => setOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm rounded-md hover:bg-secondary">
                     <User className="h-4 w-4" /> Mein Bereich
                   </Link>
-                  {isAdmin && (
-                    <Link href="/admin" onClick={() => setOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm rounded-md hover:bg-[--secondary]">
-                      <Settings className="h-4 w-4" /> Admin
-                    </Link>
-                  )}
-                  <button onClick={handleSignOut} className="flex items-center gap-2 px-3 py-2.5 text-sm rounded-md hover:bg-[--secondary] w-full text-left">
+                  <button onClick={handleSignOut} className="flex items-center gap-2 px-3 py-2.5 text-sm rounded-md hover:bg-secondary w-full text-left">
                     <LogOut className="h-4 w-4" /> Abmelden
                   </button>
                 </>
               ) : (
-                <Link href="/login" onClick={() => setOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm rounded-md bg-[--primary] text-white">
+                <Link href="/login" onClick={() => setOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm rounded-md bg-primary text-white">
                   <LogIn className="h-4 w-4" /> Anmelden
                 </Link>
               )}

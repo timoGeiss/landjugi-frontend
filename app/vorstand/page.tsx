@@ -1,5 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
-import { Mail, Phone } from 'lucide-react'
+import { Mail, Phone, User } from 'lucide-react'
 import { MemberAvatar } from '@/components/ui/member-avatar'
 import { PageHeader } from '@/components/ui/page-header'
 
